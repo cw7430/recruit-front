@@ -1,0 +1,14 @@
+{
+  "name": "@repo/shared-schemas",
+  "private": true,
+  "version": "1.0.0",
+  "type": "commonjs",
+  "dependencies": {
+    "zod": "^4.4.3",
+    "http-status-codes": "^2.3.0"
+  },
+  "scripts": {
+    "build": "tsc && tsc-alias",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix"
+  }
+}
