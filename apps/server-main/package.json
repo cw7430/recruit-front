@@ -1,0 +1,19 @@
+{
+  "name": "main",
+  "private": true,
+  "version": "1.0.0",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --exec ts-node --transpileOnly -r tsconfig-paths/register src/index.ts",
+    "build": "tsc && tsc-alias",
+    "start": "node dist/index.js",
+    "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix"
+  },
+  "dependencies": {
+    "@repo/shared-schemas": "workspace:*",
+    "@repo/shared-utils": "workspace:*",
+    "dotenv": "^17.4.2",
+    "fastify": "^5.8.5"
+  }
+}
