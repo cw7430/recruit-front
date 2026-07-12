@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { Decimal } from 'decimal.js';
 
 const baseEducationSchema = z.object({
   eduSeq: z.string(),
@@ -33,10 +34,22 @@ export const educationRequestSchema = baseEducationSchema
       ['GRADUATED', 'ENROLLED', 'DROPPED_OUT'],
       '구분 형식이 올바르지 않습니다.',
     ),
-    startPeriod: z.coerce.date('입학일 형식이 올바르지 않습니다.'),
-    endPeriod: z.coerce.date('졸업일 형식이 올바르지 않습니다.'),
+    startPeriod: z
+      .string()
+      .regex(/^\d{4}-\d{2}$/, '입학일 형식은 YYYY-MM이어야 합니다.')
+      .transform((val) => new Date(`${val}-01`)),
+    endPeriod: z
+      .string()
+      .regex(/^\d{4}-\d{2}$/, '졸업일 형식은 YYYY-MM이어야 합니다.')
+      .transform((val) => new Date(`${val}-01`)),
     major: z.string().min(1, '전공을 입력해주세요.'),
-    grade: z.string().min(1, '학점을 입력해주세요.'),
+    grade: z
+      .string()
+      .min(1, '학점을 입력해주세요.')
+      .refine((grade) => {
+        const value = new Decimal(grade);
+        return value.gte(0) && value.lte(4.5);
+      }, '학점은 0.00부터 4.50까지 입력 가능합니다.'),
     locSeq: z.string().min(1, '지역을 선택해주세요.'),
   })
   .superRefine((data, ctx) => {
@@ -61,4 +74,14 @@ export const educationRequestSchema = baseEducationSchema
     }
   });
 
-export const educationResponseSchema = baseEducationSchema;
+export const educationRequestSchemaForServer = educationRequestSchema.extend({
+  startPeriod: z.coerce.date(),
+  endPeriod: z.coerce.date(),
+});
+
+export const educationResponseSchemaForServer = baseEducationSchema;
+
+export const educationResponseSchema = educationResponseSchemaForServer.extend({
+  eduSeq: z.string().transform((val) => BigInt(val)),
+  locSeq: z.string().transform((val) => BigInt(val)),
+});
