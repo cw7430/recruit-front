@@ -9,8 +9,12 @@
     "dev:main": "pnpm --filter main dev",
     "build": "pnpm -r build"
   },
+  "dependencies": {
+    "decimal.js": "^10.6.0"
+  },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@types/node": "^24.12.3",
     "cross-env": "^10.1.0",
     "eslint": "^10.3.0",
     "globals": "^17.6.0",
@@ -20,7 +24,6 @@
     "tsc-alias": "^1.8.17",
     "tsconfig-paths": "^4.2.0",
     "typescript": "~6.0.2",
-    "typescript-eslint": "^8.59.2",
-    "@types/node": "^24.12.3"
+    "typescript-eslint": "^8.59.2"
   }
 }
