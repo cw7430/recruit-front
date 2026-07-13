@@ -11,6 +11,7 @@
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix"
   },
   "dependencies": {
+    "@fastify/cors": "^11.3.0",
     "@repo/shared-schemas": "workspace:*",
     "@repo/shared-utils": "workspace:*",
     "dotenv": "^17.4.2",
