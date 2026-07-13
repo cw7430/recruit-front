@@ -10,10 +10,17 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@hookform/resolvers": "^5.4.0",
     "@repo/shared-schemas": "workspace:*",
     "@repo/shared-utils": "workspace:*",
+    "@tanstack/react-query": "^5.101.2",
+    "bootstrap": "^5.3.8",
     "react": "^19.2.6",
-    "react-dom": "^19.2.6"
+    "react-bootstrap": "^2.10.10",
+    "react-dom": "^19.2.6",
+    "react-hook-form": "^7.81.0",
+    "react-router-dom": "^7.18.1",
+    "zustand": "^5.0.14"
   },
   "devDependencies": {
     "@babel/core": "^7.29.0",
