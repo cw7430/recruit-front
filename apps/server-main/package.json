@@ -15,6 +15,8 @@
     "@repo/shared-schemas": "workspace:*",
     "@repo/shared-utils": "workspace:*",
     "dotenv": "^17.4.2",
-    "fastify": "^5.8.5"
+    "fastify": "^5.8.5",
+    "zod": "^4.4.3",
+    "decimal.js": "^10.6.0"
   }
 }

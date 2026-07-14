@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-export const loginRequestSchema = z.object({
+export const baseLoginRequestSchema = z.object({
   name: z
     .string()
     .min(1, '이름을 입력해주세요.')
@@ -15,18 +15,7 @@ export const loginRequestSchema = z.object({
   password: z.string().min(1, '비밀 번호를 입력해주세요.'),
 });
 
-export const loginResponseSchema = z.object({
+export const baseLoginResponseSchema = z.object({
   accessTokenExpiresAtMs: z.number(),
   refreshTokenExpiresAtMs: z.number(),
 });
-
-export const loginResponseSchemaForServer = loginResponseSchema.extend({
-  accessToken: z.string(),
-  refreshToken: z.string(),
-});
-
-export type LoginRequestDto = z.infer<typeof loginRequestSchema>;
-export type LoginResponseDto = z.infer<typeof loginResponseSchema>;
-export type LoginResponseDtoForServer = z.infer<
-  typeof loginResponseSchemaForServer
->;

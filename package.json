@@ -9,9 +9,6 @@
     "dev:main": "pnpm --filter main dev",
     "build": "pnpm -r build"
   },
-  "dependencies": {
-    "decimal.js": "^10.6.0"
-  },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@types/node": "^24.12.3",
