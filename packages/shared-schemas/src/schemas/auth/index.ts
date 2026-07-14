@@ -1,8 +1,4 @@
 export {
-  loginRequestSchema,
-  loginResponseSchema,
-  loginResponseSchemaForServer,
-  type LoginRequestDto,
-  type LoginResponseDto,
-  type LoginResponseDtoForServer,
+  baseLoginRequestSchema,
+  baseLoginResponseSchema
 } from './login';
