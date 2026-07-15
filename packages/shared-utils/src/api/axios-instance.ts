@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const axiosInstance = (domain: string) =>
+export const baseAxiosInstance = (domain: string) =>
   axios.create({
     baseURL: domain,
     headers: {

@@ -1,5 +1,6 @@
 import Fastify from 'fastify';
 import cors from '@fastify/cors';
+import fastifyCookie from '@fastify/cookie';
 
 import { envConfig } from './common/configs';
 
@@ -11,6 +12,8 @@ export const buildApp = async () => {
   app.register(cors, {
     origin: CLIENT_URL,
   });
+
+  app.register(fastifyCookie, {});
 
   app.ready((err) => {
     if (err) throw err;
