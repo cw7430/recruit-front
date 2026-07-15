@@ -11,12 +11,13 @@
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix"
   },
   "dependencies": {
+    "@fastify/cookie": "^11.1.1",
     "@fastify/cors": "^11.3.0",
     "@repo/shared-schemas": "workspace:*",
     "@repo/shared-utils": "workspace:*",
+    "decimal.js": "^10.6.0",
     "dotenv": "^17.4.2",
     "fastify": "^5.8.5",
-    "zod": "^4.4.3",
-    "decimal.js": "^10.6.0"
+    "zod": "^4.4.3"
   }
 }
