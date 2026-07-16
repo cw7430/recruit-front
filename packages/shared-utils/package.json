@@ -4,8 +4,7 @@
   "version": "1.0.0",
   "type": "commonjs",
   "dependencies": {
-    "@repo/shared-schemas": "workspace:*",
-    "axios": "^1.17.0"
+    "@repo/shared-schemas": "workspace:*"
   },
   "scripts": {
     "build": "tsc && tsc-alias",
