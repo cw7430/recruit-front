@@ -6,6 +6,7 @@ import {
   resolveQuery,
   resolveContentType,
   type ContentType,
+  type QueryValue,
 } from '@repo/shared-utils/src/api';
 import { envConfig } from '@/common/configs';
 import { getToken, type AuthType } from './token';
@@ -44,7 +45,7 @@ export const FetchRequest = {
     req: FastifyRequest,
     endPoint: string,
     options?: Omit<FetchOptions, 'contentType'>,
-    params?: Record<string, string | number | boolean | undefined>,
+    params?: Record<string, QueryValue>,
   ): Promise<T> => {
     const query = resolveQuery(params);
 

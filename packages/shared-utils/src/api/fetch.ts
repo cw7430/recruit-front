@@ -4,27 +4,25 @@ import { ApiError } from './api-error';
 
 export type ContentType = 'JSON' | 'FORM';
 
-export const resolveContentType = (contentType?: ContentType) => {
-  return contentType === 'FORM' ? undefined : 'application/json';
-};
+export type QueryValue = string | number | boolean | null | undefined;
 
-export const resolveQuery = (
-  params?: Record<string, string | number | boolean | undefined>,
-) => {
+export const resolveContentType = (contentType?: ContentType) =>
+  contentType === 'FORM' ? undefined : 'application/json';
+
+export const resolveQuery = (params?: Record<string, QueryValue>) => {
   if (!params) return '';
 
-  const cleanParams: Record<string, string> = {};
+  const searchParams = new URLSearchParams();
 
   for (const [key, value] of Object.entries(params)) {
-    if (value !== undefined && value !== null) {
-      cleanParams[key] = String(value);
+    if (value != null) {
+      searchParams.append(key, String(value));
     }
   }
 
-  const searchParams = new URLSearchParams(cleanParams);
-  const queryString = searchParams.toString();
+  const query = searchParams.toString();
 
-  return queryString ? `?${queryString}` : '';
+  return query ? `?${query}` : '';
 };
 
 export const resolveBody = (body?: unknown, contentType?: ContentType) => {

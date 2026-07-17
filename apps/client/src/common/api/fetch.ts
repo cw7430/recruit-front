@@ -4,9 +4,10 @@ import {
   resolveQuery,
   resolveContentType,
   type ContentType,
+  type QueryValue,
 } from '@repo/shared-utils/src/api';
 
-const BASE_URL = import.meta.env.BASE_URL;
+const BASE_URL = import.meta.env.VITE_API_URL ?? 'http://localhost:3000/bff/v1';
 interface FetchOptions extends RequestInit {
   contentType?: ContentType;
 }
@@ -35,7 +36,7 @@ export const fetchRequest = {
   apiGet: async <T>(
     endPoint: string,
     options?: Omit<FetchOptions, 'contentType'>,
-    params?: Record<string, string | number | boolean | undefined>,
+    params?: Record<string, QueryValue>,
   ): Promise<T> => {
     const query = resolveQuery(params);
 
