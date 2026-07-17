@@ -1,7 +1,7 @@
 import { type FastifyRequest, type FastifyReply } from 'fastify';
 
-import { ApiError } from '@repo/shared-utils/src/api';
-import { ResponseCode } from '@repo/shared-schemas/src/constants';
+import { ApiError } from '@repo/shared-utils/api';
+import { ResponseCode } from '@repo/shared-schemas/constants';
 
 export type AuthType = 'ACCESS' | 'REFRESH';
 

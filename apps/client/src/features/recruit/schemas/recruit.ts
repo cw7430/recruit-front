@@ -3,7 +3,7 @@ import { z } from 'zod';
 import {
   baseRecruitSchema,
   baseRecruitCalculateSchema,
-} from '@repo/shared-schemas/src/schemas/recruit';
+} from '@repo/shared-schemas/schemas/recruit';
 import { educationRequestSchema, educationResponseSchema } from './education';
 import { careerRequestSchema, careerResponseSchema } from './career';
 import {

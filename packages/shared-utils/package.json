@@ -2,12 +2,38 @@
   "name": "@repo/shared-utils",
   "private": true,
   "version": "1.0.0",
-  "type": "commonjs",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./api": {
+      "types": "./dist/api/index.d.ts",
+      "import": "./dist/api/index.js",
+      "default": "./dist/api/index.js"
+    },
+    "./api/*": {
+      "types": "./dist/api/*.d.ts",
+      "import": "./dist/api/*.js",
+      "default": "./dist/api/*.js"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "api": ["src/api/index.ts"],
+      "api/*": ["src/api/*.ts"],
+      "*": ["src/*.ts", "dist/*.d.ts"]
+    }
+  },
   "dependencies": {
     "@repo/shared-schemas": "workspace:*"
   },
   "scripts": {
-    "build": "tsc && tsc-alias",
+    "build": "tsc",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix"
   }
 }

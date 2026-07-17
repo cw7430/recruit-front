@@ -5,7 +5,7 @@ import {
   resolveContentType,
   type ContentType,
   type QueryValue,
-} from '@repo/shared-utils/src/api';
+} from '@repo/shared-utils/api';
 
 const BASE_URL = import.meta.env.VITE_API_URL ?? 'http://localhost:3000/bff/v1';
 interface FetchOptions extends RequestInit {

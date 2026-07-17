@@ -7,7 +7,7 @@ import {
   resolveContentType,
   type ContentType,
   type QueryValue,
-} from '@repo/shared-utils/src/api';
+} from '@repo/shared-utils/api';
 import { envConfig } from '@/common/configs';
 import { getToken, type AuthType } from './token';
 

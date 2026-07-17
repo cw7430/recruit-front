@@ -1,5 +1,5 @@
-import { ResponseCode } from '@repo/shared-schemas/src/constants';
-import { ApiFail } from '@repo/shared-schemas/src/schemas';
+import { ResponseCode } from '@repo/shared-schemas/constants';
+import type { ApiFail } from '@repo/shared-schemas/schemas';
 import { ApiError } from './api-error';
 
 export type ContentType = 'JSON' | 'FORM';

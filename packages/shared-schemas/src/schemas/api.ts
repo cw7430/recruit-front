@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-import { ResponseCodeValues } from '@/constants';
+import { ResponseCodeValues } from '../constants';
 
 const apiBaseSchema = z.object({
   code: z.enum(ResponseCodeValues),

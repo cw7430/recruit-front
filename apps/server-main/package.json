@@ -2,7 +2,7 @@
   "name": "main",
   "private": true,
   "version": "1.0.0",
-  "type": "commonjs",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon --exec ts-node --transpileOnly -r tsconfig-paths/register src/index.ts",

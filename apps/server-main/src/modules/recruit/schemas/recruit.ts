@@ -4,7 +4,7 @@ import {
   baseRecruitSchema,
   baseRecruitCalculateSchema,
   baseLocationSchema,
-} from '@repo/shared-schemas/src/schemas/recruit';
+} from '@repo/shared-schemas/schemas/recruit';
 import { educationRequestSchema, educationResponseSchema } from './education';
 import { careerRequestSchema, careerResponseSchema } from './career';
 import {

@@ -1,5 +1,5 @@
-import { type ResponseCodeType } from '@repo/shared-schemas/src/constants';
-import { ValidationError } from '@repo/shared-schemas/src/schemas';
+import type { ResponseCodeType } from '@repo/shared-schemas/constants';
+import type { ValidationError } from '@repo/shared-schemas/schemas';
 
 export class ApiError extends Error {
   public readonly code: Exclude<ResponseCodeType, 'SU'>;

@@ -1,6 +1,6 @@
 import { type FastifyRequest } from 'fastify';
 
-import type { ApiSuccessWithResult } from '@repo/shared-schemas/src/schemas';
+import type { ApiSuccessWithResult } from '@repo/shared-schemas/schemas';
 import type { LoginResponseDto, LoginRequestDto } from './schemas';
 import { FetchRequest } from '@/common/api';
 
