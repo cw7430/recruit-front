@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-import { baseCareerSchema } from '@repo/shared-schemas/src/schemas/recruit';
+import { baseCareerSchema } from '@repo/shared-schemas/schemas/recruit';
 
 export const careerRequestSchema = baseCareerSchema
   .extend({

@@ -2,11 +2,11 @@ import type {
   ResponseSingle,
   ResponseWithResult,
   ValidationError,
-} from '@repo/shared-schemas/src/schemas';
+} from '@repo/shared-schemas/schemas';
 import {
   ResponseCode,
   type ResponseCodeType,
-} from '@repo/shared-schemas/src/constants';
+} from '@repo/shared-schemas/constants';
 import { ApiError } from './api-error';
 
 const baseResponse = {

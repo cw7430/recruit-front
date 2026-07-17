@@ -6,7 +6,7 @@
     "outDir": "./dist",
 
     /* === Node 환경 설정 === */
-    "module": "CommonJS",
+    "module": "esnext",
     "lib": ["ES2023"],
     "types": ["node"],
     "esModuleInterop": true,
@@ -14,14 +14,12 @@
     /* === 엄격한 타입 옵션 === */
     "noUncheckedIndexedAccess": true,
 
+    /* === 타입 빌드 === */
+    "declaration": true,
+
     /* === 기타 === */
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-
-    /* === 경로 별칭 === */
-    "paths": {
-      "@/*": ["./src/*"]
-    }
+    "forceConsistentCasingInFileNames": true
   },
   "include": ["src"],
   "exclude": ["node_modules"]

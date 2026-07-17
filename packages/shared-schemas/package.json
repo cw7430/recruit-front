@@ -2,14 +2,70 @@
   "name": "@repo/shared-schemas",
   "private": true,
   "version": "1.0.0",
-  "type": "commonjs",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./schemas": {
+      "types": "./dist/schemas/index.d.ts",
+      "import": "./dist/schemas/index.js",
+      "default": "./dist/schemas/index.js"
+    },
+    "./schemas/auth": {
+      "types": "./dist/schemas/auth/index.d.ts",
+      "import": "./dist/schemas/auth/index.js",
+      "default": "./dist/schemas/auth/index.js"
+    },
+    "./schemas/auth/*": {
+      "types": "./dist/schemas/auth/*.d.ts",
+      "import": "./dist/schemas/auth/*.js",
+      "default": "./dist/schemas/auth/*.js"
+    },
+    "./schemas/recruit": {
+      "types": "./dist/schemas/recruit/index.d.ts",
+      "import": "./dist/schemas/recruit/index.js",
+      "default": "./dist/schemas/recruit/index.js"
+    },
+    "./schemas/recruit/*": {
+      "types": "./dist/schemas/recruit/*.d.ts",
+      "import": "./dist/schemas/recruit/*.js",
+      "default": "./dist/schemas/recruit/*.js"
+    },
+    "./constants": {
+      "types": "./dist/constants/index.d.ts",
+      "import": "./dist/constants/index.js",
+      "default": "./dist/constants/index.js"
+    },
+    "./constants/*": {
+      "types": "./dist/constants/*.d.ts",
+      "import": "./dist/constants/*.js",
+      "default": "./dist/constants/*.js"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "schemas": ["src/schemas/index.ts"],
+      "schemas/auth": ["src/schemas/auth/index.ts"],
+      "schemas/auth/*": ["src/schemas/auth/*.ts"],
+      "schemas/recruit": ["src/schemas/recruit/index.ts"],
+      "schemas/recruit/*": ["src/schemas/recruit/*.ts"],
+      "constants": ["src/constants/index.ts"],
+      "constants/*": ["src/constants/*.ts"],
+      "*": ["src/*.ts", "dist/*.d.ts"]
+    }
+  },
   "dependencies": {
     "zod": "^4.4.3",
     "decimal.js": "^10.6.0",
     "http-status-codes": "^2.3.0"
   },
   "scripts": {
-    "build": "tsc && tsc-alias",
+    "build": "tsc",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix"
   }
 }

@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-import { baseCertificateSchema } from '@repo/shared-schemas/src/schemas/recruit';
+import { baseCertificateSchema } from '@repo/shared-schemas/schemas/recruit';
 
 export const certificateRequestSchema = baseCertificateSchema
   .extend({

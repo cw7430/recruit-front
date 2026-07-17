@@ -1,12 +1,12 @@
 import { type FastifyRequest, type FastifyReply } from 'fastify';
 
-import { ResponseCode } from '@repo/shared-schemas/src/constants';
-import type { ApiSuccessWithResult } from '@repo/shared-schemas/src/schemas';
+import { ResponseCode } from '@repo/shared-schemas/constants';
+import type { ApiSuccessWithResult } from '@repo/shared-schemas/schemas';
 import {
   ApiError,
   responseWithResult,
   responseSingle,
-} from '@repo/shared-utils/src/api';
+} from '@repo/shared-utils/api';
 import { AuthApi } from './auth.api';
 import {
   loginResponseSchema,

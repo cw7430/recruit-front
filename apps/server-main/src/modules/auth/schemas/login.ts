@@ -3,7 +3,7 @@ import { z } from 'zod';
 import {
   baseLoginRequestSchema,
   baseLoginResponseSchema,
-} from '@repo/shared-schemas/src/schemas/auth';
+} from '@repo/shared-schemas/schemas/auth';
 
 export const loginRequestSchema = baseLoginRequestSchema;
 export const loginResponseSchema = baseLoginResponseSchema.extend({

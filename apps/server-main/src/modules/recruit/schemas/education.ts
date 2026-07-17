@@ -1,7 +1,7 @@
 import { z } from 'zod';
 import { Decimal } from 'decimal.js';
 
-import { baseEducationSchema } from '@repo/shared-schemas/src/schemas/recruit';
+import { baseEducationSchema } from '@repo/shared-schemas/schemas/recruit';
 
 export const educationRequestSchema = baseEducationSchema
   .extend({
