@@ -42,3 +42,8 @@ export const setToken = (
     },
   );
 };
+
+export const removeToken = (reply: FastifyReply) => {
+  reply.clearCookie('access_token');
+  reply.clearCookie('refresh_token');
+};
