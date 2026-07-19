@@ -16,6 +16,8 @@
 
     /* === 타입 빌드 === */
     "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
 
     /* === 기타 === */
     "skipLibCheck": true,

@@ -47,18 +47,6 @@
       "default": "./dist/constants/*.js"
     }
   },
-  "typesVersions": {
-    "*": {
-      "schemas": ["src/schemas/index.ts"],
-      "schemas/auth": ["src/schemas/auth/index.ts"],
-      "schemas/auth/*": ["src/schemas/auth/*.ts"],
-      "schemas/recruit": ["src/schemas/recruit/index.ts"],
-      "schemas/recruit/*": ["src/schemas/recruit/*.ts"],
-      "constants": ["src/constants/index.ts"],
-      "constants/*": ["src/constants/*.ts"],
-      "*": ["src/*.ts", "dist/*.d.ts"]
-    }
-  },
   "dependencies": {
     "zod": "^4.4.3",
     "decimal.js": "^10.6.0",

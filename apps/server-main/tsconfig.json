@@ -14,6 +14,11 @@
     /* === 엄격한 타입 옵션 === */
     "noUncheckedIndexedAccess": true,
 
+    /* === 타입 빌드 === */
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+
     /* === 기타 === */
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,

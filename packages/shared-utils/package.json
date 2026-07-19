@@ -22,13 +22,6 @@
       "default": "./dist/api/*.js"
     }
   },
-  "typesVersions": {
-    "*": {
-      "api": ["src/api/index.ts"],
-      "api/*": ["src/api/*.ts"],
-      "*": ["src/*.ts", "dist/*.d.ts"]
-    }
-  },
   "dependencies": {
     "@repo/shared-schemas": "workspace:*"
   },
