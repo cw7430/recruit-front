@@ -2,8 +2,9 @@
   "name": "main",
   "private": true,
   "version": "1.0.0",
-  "type": "module",
-  "main": "index.js",
+  "type": "commonjs",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "nodemon --exec ts-node --transpileOnly -r tsconfig-paths/register src/index.ts",
     "build": "tsc && tsc-alias",
