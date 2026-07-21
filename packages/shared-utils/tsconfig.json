@@ -6,7 +6,7 @@
     "outDir": "./dist",
 
     /* === Node 환경 설정 === */
-    "module": "esnext",
+    "module": "commonjs",
     "lib": ["ES2023"],
     "types": ["node"],
     "esModuleInterop": true,
