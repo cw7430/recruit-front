@@ -9,6 +9,7 @@ export const loginRequestSchema = baseLoginRequestSchema;
 export const loginResponseSchema = baseLoginResponseSchema.extend({
   accessToken: z.string(),
   refreshToken: z.string(),
+  refreshTokenExpiresAtMs: z.number(),
 });
 
 export type LoginRequestDto = z.infer<typeof loginRequestSchema>;

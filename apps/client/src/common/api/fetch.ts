@@ -32,7 +32,7 @@ const clientFetch = async <T>(
   return fetchResponse(res);
 };
 
-export const fetchRequest = {
+export const FetchRequest = {
   apiGet: async <T>(
     endPoint: string,
     options?: Omit<FetchOptions, 'contentType'>,

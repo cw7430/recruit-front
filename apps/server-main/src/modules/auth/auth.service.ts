@@ -29,7 +29,8 @@ const loginAndRefresh = (
   }
   const result = validation.data;
 
-  const { accessToken, refreshToken, ...clientRes } = result;
+  const { accessToken, refreshToken, refreshTokenExpiresAtMs, ...clientRes } =
+    result;
 
   setToken(accessToken, 'ACCESS', reply);
   setToken(refreshToken, 'REFRESH', reply);
@@ -38,11 +39,7 @@ const loginAndRefresh = (
 };
 
 export const AuthService = {
-  login: async (
-    body: LoginRequestDto,
-    req: FastifyRequest,
-    reply: FastifyReply,
-  ) =>
+  login: (body: LoginRequestDto, req: FastifyRequest, reply: FastifyReply) =>
     responseWithResult(async () => {
       const res = await AuthApi.login(body, req);
 
@@ -55,8 +52,8 @@ export const AuthService = {
 
       return loginAndRefresh(res, reply);
     }),
-    
-  refresh: async (req: FastifyRequest, reply: FastifyReply) =>
+
+  refresh: (req: FastifyRequest, reply: FastifyReply) =>
     responseWithResult(async () => {
       const res = await AuthApi.refresh(req);
 
@@ -70,7 +67,7 @@ export const AuthService = {
       return loginAndRefresh(res, reply);
     }),
 
-  logout: async (reply: FastifyReply) =>
+  logout: (reply: FastifyReply) =>
     responseSingle(async () => {
       removeToken(reply);
     }),

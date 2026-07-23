@@ -17,5 +17,4 @@ export const baseLoginRequestSchema = z.object({
 
 export const baseLoginResponseSchema = z.object({
   accessTokenExpiresAtMs: z.number(),
-  refreshTokenExpiresAtMs: z.number(),
 });
