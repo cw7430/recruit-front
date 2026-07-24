@@ -10,35 +10,17 @@ import type {
   ApiSuccessWithResult,
 } from '@repo/shared-schemas/schemas';
 import type {
-  LoginRequestDto,
-  LoginResponseDto,
-} from '@/features/auth/schemas';
+  RecruitRequestDto,
+  RecruitResponseDto,
+} from '@/features/recruit/schemas';
 
-const { apiPost } = FetchRequest;
+const { apiGet, apiPost } = FetchRequest;
 
-export const AuthApi = {
-  login: (body: LoginRequestDto) =>
+export const RecruitApi = {
+  getRecruit: () =>
     responseWithResult(async () => {
-      const res = await apiPost<ApiSuccessWithResult<LoginResponseDto>>(
-        '/auth/login',
-        {},
-        body,
-      );
-
-      if (!res?.result) {
-        throw new ApiError(
-          ResponseCode.INTERNAL_SERVER_ERROR.code,
-          ResponseCode.INTERNAL_SERVER_ERROR.message,
-        );
-      }
-
-      return res;
-    }),
-
-  refresh: () =>
-    responseWithResult(async () => {
-      const res = await apiPost<ApiSuccessWithResult<LoginResponseDto>>(
-        '/auth/refresh',
+      const res = await apiGet<ApiSuccessWithResult<RecruitResponseDto>>(
+        '/recruit',
         {},
       );
 
@@ -52,9 +34,9 @@ export const AuthApi = {
       return res;
     }),
 
-  logout: () =>
+  recruitAction: (body: RecruitRequestDto) =>
     responseSingle(async () => {
-      const res = await apiPost<ApiSuccessSingle>('/auth/logout', {});
+      const res = await apiPost<ApiSuccessSingle>('/recruit', {}, body);
 
       if (!res) {
         throw new ApiError(
